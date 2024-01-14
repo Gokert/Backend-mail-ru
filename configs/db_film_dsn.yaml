@@ -1,0 +1,15 @@
+user: "admin"
+dbname: "films_service"
+password: "admin"
+host: "127.0.0.1"
+port: 5432
+sslmode: "disable"
+max_open_conns: 10
+timer: 1
+films_db: "postgres"
+genres_db: "postgres"
+crew_db: "postgres"
+profession_db: "postgres"
+calendar_db: "postgres"
+server_adress: ":8082"
+grpc_port: ":50051"

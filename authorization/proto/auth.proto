@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package auth;
+option go_package = "/authorization/proto";
+
+message FindIdRequest {
+  string sid = 1;
+}
+
+message FindIdResponse {
+  int64 value = 1;
+}
+
+message NamesAndPathsListRequest {
+  repeated int32 ids = 1;
+}
+
+message NamesAndPathsResponse {
+  repeated string names = 1;
+  repeated string paths = 2;
+}
+
+message AuthorizationCheckRequest {
+  string sid = 1; 
+}
+
+message AuthorizationCheckResponse {
+  bool status = 1; 
+}
+
+message RoleRequest {
+  string login = 1;
+}
+
+message RoleResponse {
+  string role = 1;
+}
+
+service Authorization {
+  rpc GetId(FindIdRequest) returns (FindIdResponse) {}
+  rpc GetIdsAndPaths(NamesAndPathsListRequest) returns (NamesAndPathsResponse) {}
+  rpc GetAuthorizationStatus(AuthorizationCheckRequest) returns (AuthorizationCheckResponse) {}
+  rpc GetRole(RoleRequest) returns (RoleResponse) {}
+}

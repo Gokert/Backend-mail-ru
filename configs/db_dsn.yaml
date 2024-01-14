@@ -1,0 +1,8 @@
+user: "admin"
+dbname: "auth_service"
+password: "admin"
+host: "127.0.0.1"
+port: 5432
+sslmode: "disable"
+max_open_conns: 10
+timer: 1
